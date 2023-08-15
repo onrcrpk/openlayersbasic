@@ -24,9 +24,7 @@
 
 
     <script>
-// Start the timer before setting up the Leaflet map
-var olStartTime = Date.now();
-
+var startTime = performance.now();
 
 var openLayersMap = new ol.Map({
     target: 'ol-map',
@@ -34,11 +32,10 @@ var openLayersMap = new ol.Map({
     view: new ol.View({ center: ol.proj.fromLonLat([6.9, 52.2]), zoom: 10 })
 });
 
+var endTime = performance.now();
+var timeTaken = endTime - startTime;
+console.log("Time taken to load the OpenLayers map: " + timeTaken + "ms");
 
-// Calculate the time taken to render the map
-var olEndTime = Date.now();
-var olTimeTaken = olEndTime - olStartTime;
-console.log("OL Map took " + olTimeTaken + " milliseconds to render.");
         
     </script>
 </body>
