@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ol initial map</title>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+
+    
+    <style>
+    #ol-map {
+      height: 700px;
+      width: 700px;
+    }
+    </style>
+
+</head>
+<body>
+    
+    <div id="ol-map"></div>
+
+
+    <script>
+// Start the timer before setting up the Leaflet map
+var olStartTime = Date.now();
+
+
+var openLayersMap = new ol.Map({
+    target: 'ol-map',
+    layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
+    view: new ol.View({ center: ol.proj.fromLonLat([6.9, 52.2]), zoom: 10 })
+});
+
+
+// Calculate the time taken to render the map
+var leafletEndTime = Date.now();
+var leafletTimeTaken = leafletEndTime - olStartTime;
+console.log("Leaflet Map took " + leafletTimeTaken + " milliseconds to render.");
+        
+    </script>
+</body>
+</html>
