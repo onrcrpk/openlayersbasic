@@ -6,9 +6,9 @@
     <title>ol initial map</title>
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
-    <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
     
     <style>
     #ol-map {
@@ -36,9 +36,9 @@ var openLayersMap = new ol.Map({
 
 
 // Calculate the time taken to render the map
-var leafletEndTime = Date.now();
-var leafletTimeTaken = leafletEndTime - olStartTime;
-console.log("Leaflet Map took " + leafletTimeTaken + " milliseconds to render.");
+var olEndTime = Date.now();
+var olTimeTaken = olEndTime - olStartTime;
+console.log("OL Map took " + olTimeTaken + " milliseconds to render.");
         
     </script>
 </body>
